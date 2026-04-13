@@ -30,9 +30,11 @@ MiniEcommerceACL/
 ## Requisitos
 
 - PHP 7.4 o superior
-- MySQL/MariaDB
+- MySQL/SQLYOG
 - Servidor web (Apache/Nginx)
 - XAMPP (opcional, para desarrollo local)
+- Navegador web
+- Visual Studio Code
 
 ## Instalación
 
