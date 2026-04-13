@@ -87,9 +87,6 @@ Por ejemplo:
 - **Carlitos Chávez** - Desarrollador
 - **Lurvin Ramos** - Desarrollador
 
-## Licencia
-
-Este proyecto está bajo la Licencia MIT.
 
 ## Contribuciones
 
