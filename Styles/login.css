@@ -1,0 +1,273 @@
+/* Variables de tema originales con fondo negro */
+:root {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #2a2a2a;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --border-color: #333;
+  --card-bg: rgba(30, 30, 30, 0.95);
+  --accent-primary: #0d6efd;
+  --accent-secondary: #6610f2;
+  --success-color: #28a745;
+}
+
+/* Tema claro mejorado */
+[data-theme="light"] {
+  --bg-primary: #f8f9fa !important;
+  --bg-secondary: #ffffff !important;
+  --bg-tertiary: #e9ecef !important;
+  --text-primary: #212529 !important;
+  --text-secondary: #6c757d !important;
+  --border-color: #dee2e6 !important;
+  --card-bg: rgba(255, 255, 255, 0.95) !important;
+  --accent-primary: #0d6efd;
+  --accent-secondary: #6610f2;
+  --success-color: #28a745;
+}
+
+body {
+  background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  transition: background 0.3s ease;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Efecto de partículas de fondo sutiles */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 80%, rgba(13, 110, 253, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(102, 16, 242, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(40, 167, 69, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Forzar fondo claro en modo claro */
+[data-theme="light"] body {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff) !important;
+}
+
+[data-theme="light"] body::before {
+  background: radial-gradient(circle at 20% 80%, rgba(13, 110, 253, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(102, 16, 242, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(40, 167, 69, 0.01) 0%, transparent 50%);
+}
+
+/* Contenedor principal para centrar login */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+}
+
+/* Tarjeta de login mejorada */
+.login-card {
+  width: 420px;
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-primary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+              0 0 0 1px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de brillo en la tarjeta */
+.login-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.8s ease;
+}
+
+.login-card:hover::before {
+  left: 100%;
+}
+
+.login-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Botón con gradiente mejorado */
+.btn-gradient {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-gradient:hover::before {
+  left: 100%;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4),
+              0 0 20px rgba(102, 126, 234, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn-gradient:active {
+  transform: translateY(0);
+}
+
+/* Inputs mejorados */
+.form-control {
+  background: rgba(42, 42, 66, 0.6);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+[data-theme="light"] .form-control {
+  background: rgba(237, 242, 247, 0.8);
+}
+
+.form-control:focus {
+  background: rgba(42, 42, 66, 0.8);
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2),
+              0 4px 12px rgba(102, 126, 234, 0.15);
+  outline: none;
+}
+
+[data-theme="light"] .form-control:focus {
+  background: rgba(237, 242, 247, 0.9);
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2),
+              0 4px 12px rgba(66, 153, 225, 0.15);
+}
+
+/* Input group mejorado */
+.input-group {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.input-group-text {
+  background: rgba(42, 42, 66, 0.8);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .input-group-text {
+  background: rgba(237, 242, 247, 0.9);
+}
+
+.input-group:focus-within .input-group-text {
+  background: rgba(102, 126, 234, 0.1);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+/* Eslogan mejorado */
+.slogan {
+  color: var(--accent-primary);
+  font-weight: 600;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.slogan:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Logo mejorado */
+.login-card img {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login-card:hover img {
+  transform: rotate(5deg) scale(1.1);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+/* Checkbox mejorado */
+.form-check-input:checked {
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.form-check-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* Alertas mejoradas */
+.alert {
+  border-radius: 12px;
+  border: none;
+  backdrop-filter: blur(10px);
+}
+
+.alert-danger {
+  background: rgba(245, 101, 101, 0.1);
+  color: #f56565;
+  border: 1px solid rgba(245, 101, 101, 0.2);
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-card {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}

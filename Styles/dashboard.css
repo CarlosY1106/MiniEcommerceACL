@@ -1,0 +1,217 @@
+/* Cards mejoradas con efectos modernos */
+.dashboard-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.95), rgba(42, 42, 42, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  height: 100%;
+}
+
+.dashboard-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.dashboard-card:hover::before {
+  transform: scaleX(1);
+}
+
+.dashboard-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+              0 0 20px rgba(13, 110, 253, 0.2);
+  border-color: rgba(13, 110, 253, 0.3);
+}
+
+.dashboard-card .icon-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.dashboard-card:hover .icon-wrapper {
+  transform: rotate(5deg) scale(1.1);
+}
+
+.dashboard-card .icon-wrapper::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.dashboard-card:hover .icon-wrapper::after {
+  opacity: 0.3;
+}
+
+.dashboard-card i {
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.dashboard-card:hover i {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px currentColor);
+}
+
+.dashboard-card h5 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.dashboard-card:hover h5 {
+  transform: translateY(-2px);
+}
+
+.dashboard-card .btn {
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.dashboard-card .btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.dashboard-card .btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.dashboard-card .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Colores específicos para cada tipo de card */
+.card-usuarios .icon-wrapper { background: linear-gradient(135deg, #0d6efd, #0056b3); }
+.card-usuarios i { color: #ffffff; }
+
+.card-productos .icon-wrapper { background: linear-gradient(135deg, #198754, #146c43); }
+.card-productos i { color: #ffffff; }
+
+.card-proveedores .icon-wrapper { background: linear-gradient(135deg, #ffc107, #e0a800); }
+.card-proveedores i { color: #ffffff; }
+
+.card-clientes .icon-wrapper { background: linear-gradient(135deg, #0dcaf0, #0aa2c0); }
+.card-clientes i { color: #ffffff; }
+
+.card-empleados .icon-wrapper { background: linear-gradient(135deg, #dc3545, #b02a37); }
+.card-empleados i { color: #ffffff; }
+
+.card-sucursales .icon-wrapper { background: linear-gradient(135deg, #6c757d, #5a6268); }
+.card-sucursales i { color: #ffffff; }
+
+.card-inventario .icon-wrapper { background: linear-gradient(135deg, #20c997, #17a2b8); }
+.card-inventario i { color: #ffffff; }
+
+.card-autores .icon-wrapper { background: linear-gradient(135deg, #6f42c1, #59359a); }
+.card-autores i { color: #ffffff; }
+
+/* Texto con gradiente mejorado */
+.text-gradient {
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* Animación de entrada para las cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dashboard-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.dashboard-card:nth-child(1) { animation-delay: 0.1s; }
+.dashboard-card:nth-child(2) { animation-delay: 0.2s; }
+.dashboard-card:nth-child(3) { animation-delay: 0.3s; }
+.dashboard-card:nth-child(4) { animation-delay: 0.4s; }
+.dashboard-card:nth-child(5) { animation-delay: 0.5s; }
+.dashboard-card:nth-child(6) { animation-delay: 0.6s; }
+.dashboard-card:nth-child(7) { animation-delay: 0.7s; }
+.dashboard-card:nth-child(8) { animation-delay: 0.8s; }
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .dashboard-card {
+    margin-bottom: 20px;
+  }
+}
+
+/* Asegurar que el texto del header funcione en modo claro */
+[data-theme="light"] .text-white {
+  color: #212529 !important;
+}
+
+/* Tarjetas en modo claro - completamente blancas con texto negro */
+[data-theme="light"] .dashboard-card {
+  background: #ffffff !important;
+  border: 1px solid #dee2e6 !important;
+  color: #212529 !important;
+}
+
+[data-theme="light"] .dashboard-card h5 {
+  color: #212529 !important;
+}
+
+[data-theme="light"] .dashboard-card .text-white-50 {
+  color: #6c757d !important;
+}
+
+[data-theme="light"] .dashboard-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+  border-color: #0d6efd !important;
+}

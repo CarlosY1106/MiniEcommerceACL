@@ -1,0 +1,553 @@
+:root {
+  /* Variables de tema - Distribución de colores del login */
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #2a2a2a;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --border-color: #333;
+  --card-bg: rgba(30, 30, 30, 0.95);
+  --table-bg: #1e1e1e;
+  
+  /* Colores principales del login */
+  --primary-blue: #0d6efd;
+  --primary-purple: #6610f2;
+  --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 100%);
+  --gradient-reverse: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-blue) 100%);
+  --accent-color: #ffc107;
+}
+
+/* Tema claro */
+[data-theme="light"] {
+  --bg-primary: #f8f9fa !important;
+  --bg-secondary: #ffffff !important;
+  --bg-tertiary: #e9ecef !important;
+  --text-primary: #212529 !important;
+  --text-secondary: #6c757d !important;
+  --border-color: #dee2e6 !important;
+  --card-bg: rgba(255, 255, 255, 0.95) !important;
+  --table-bg: #ffffff !important;
+  
+  /* Mismos colores principales en tema claro */
+  --primary-blue: #0d6efd;
+  --primary-purple: #6610f2;
+  --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 100%);
+  --gradient-reverse: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-blue) 100%);
+  --accent-color: #ffc107;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Forzar fondo claro en modo claro */
+[data-theme="light"] body {
+  background-color: #f8f9fa !important;
+  color: #212529 !important;
+}
+
+/* Navbar mejorado con colores del login */
+.navbar {
+  background: var(--gradient-primary);
+  padding: 18px 0;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3),
+              0 2px 8px rgba(0,0,0,0.2);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.scrolled {
+  padding: 12px 0;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4),
+              0 4px 12px rgba(0,0,0,0.3);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: #fff !important;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.navbar-brand::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.8s ease;
+  z-index: -1;
+  border-radius: 8px;
+}
+
+.navbar-brand:hover::before {
+  left: 100%;
+}
+
+.navbar-brand:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 2px 8px rgba(255,255,255,0.3);
+  filter: brightness(1.1);
+}
+
+.navbar-brand img {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-brand:hover img {
+  transform: rotate(10deg) scale(1.1);
+  box-shadow: 0 4px 12px rgba(255,255,255,0.3);
+  border-color: var(--accent-color) !important;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.9) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  padding: 8px 12px !important;
+  border-radius: 8px;
+  font-weight: 500;
+  margin: 0 4px;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.15);
+  border-radius: 8px;
+  transform: scale(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.nav-link:hover::before {
+  transform: scale(1);
+}
+
+.nav-link:hover {
+  color: #fff !important;
+  transform: translateY(-1px);
+  text-shadow: 0 1px 4px rgba(255,255,255,0.3);
+  filter: brightness(1.1);
+}
+
+.nav-link i {
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover i {
+  transform: scale(1.1);
+}
+
+/* Dropdown mejorado */
+.dropdown-menu {
+  background: rgba(30,30,30,0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  padding: 8px;
+  margin-top: 8px;
+}
+
+[data-theme="light"] .dropdown-menu {
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.dropdown-item {
+  color: rgba(255,255,255,0.9);
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 2px 0;
+}
+
+[data-theme="light"] .dropdown-item {
+  color: rgba(0,0,0,0.8);
+}
+
+.dropdown-item:hover {
+  background: var(--gradient-primary);
+  color: #fff !important;
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(13, 110, 253, 0.3);
+}
+
+.dropdown-item i {
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover i {
+  transform: scale(1.1);
+}
+
+.dropdown-toggle::after {
+  transition: transform 0.3s ease;
+}
+
+.dropdown.show .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Botones mejorados con estilo moderno */
+.btn {
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 12px 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  text-transform: none;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  z-index: 0;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn i {
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.btn:hover i {
+  transform: scale(1.1);
+}
+
+.btn span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Botón primario */
+.btn-primary {
+  background: var(--gradient-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--gradient-reverse);
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(102, 16, 242, 0.3);
+}
+
+/* Botón éxito */
+.btn-success {
+  background: linear-gradient(135deg, #198754, #146c43);
+  color: #fff;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #146c43, #12552d);
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(25, 135, 84, 0.3);
+}
+
+/* Botón peligro */
+.btn-danger {
+  background: linear-gradient(135deg, #dc3545, #b02a37);
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #b02a37, #8b1f2c);
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(220, 53, 69, 0.3);
+}
+
+/* Botón advertencia */
+.btn-warning {
+  background: linear-gradient(135deg, #ffc107, #e0a800);
+  color: #000;
+}
+
+.btn-warning:hover {
+  background: linear-gradient(135deg, #e0a800, #d39e00);
+  color: #000;
+  box-shadow: 0 8px 25px rgba(255, 193, 7, 0.3);
+}
+
+/* Botón información */
+.btn-info {
+  background: linear-gradient(135deg, #0dcaf0, #0aa2c0);
+  color: #fff;
+}
+
+.btn-info:hover {
+  background: linear-gradient(135deg, #0aa2c0, #08869a);
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(13, 202, 240, 0.3);
+}
+
+/* Botón secundario */
+.btn-secondary {
+  background: linear-gradient(135deg, #6c757d, #5a6268);
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #5a6268, #495057);
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(108, 117, 125, 0.3);
+}
+
+/* Botón outline */
+.btn-outline-secondary {
+  background: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.btn-outline-secondary:hover {
+  background: var(--bg-secondary);
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+  box-shadow: 0 8px 25px rgba(13, 110, 253, 0.2);
+}
+
+/* Botón gradiente especial */
+.btn-gradient {
+  background: var(--gradient-primary);
+  color: #fff;
+  border: none;
+}
+
+.btn-gradient:hover {
+  background: var(--gradient-reverse);
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(102, 16, 242, 0.4);
+}
+
+/* Botones pequeños */
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  border-radius: 10px;
+}
+
+/* Botones anchos */
+.btn-block {
+  width: 100%;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+/* Botones de tabla */
+.table .btn-edit {
+  background: linear-gradient(135deg, #0d6efd, #0056b3);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.table .btn-edit:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+}
+
+.table .btn-delete {
+  background: linear-gradient(135deg, #dc3545, #b02a37);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.table .btn-delete:hover {
+  background: linear-gradient(135deg, #b02a37, #8b1f2c);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+/* Botones en modo claro */
+[data-theme="light"] .btn {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .btn:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Botones personalizados para colores especiales */
+.btn-teal {
+  background: linear-gradient(135deg, #20c997, #17a2b8);
+  color: #fff;
+}
+
+.btn-teal:hover {
+  background: linear-gradient(135deg, #17a2b8, #138496);
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(32, 201, 151, 0.3);
+}
+
+.btn-purple {
+  background: linear-gradient(135deg, #6f42c1, #59359a);
+  color: #fff;
+}
+
+.btn-purple:hover {
+  background: linear-gradient(135deg, #59359a, #492a7a);
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(111, 66, 193, 0.3);
+}
+
+/* Inputs */
+.form-control {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+.form-control:focus {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--primary-purple);
+  box-shadow: 0 0 0 3px rgba(102,16,242,0.2),
+              0 4px 12px rgba(102,16,242,0.15);
+  outline: none;
+}
+
+/* Tablas mejoradas */
+.table {
+  background: var(--table-bg);
+  color: var(--text-primary);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+.table thead {
+  background: var(--gradient-primary);
+  color: #ffffff;
+  font-weight: bold;
+}
+.table tbody tr:nth-child(even) {
+  background: var(--bg-tertiary);
+}
+.table tbody tr:hover {
+  background: var(--bg-secondary);
+  transition: 0.3s;
+}
+.table td, .table th {
+  border-color: var(--border-color);
+}
+.table .btn-edit {
+  color: var(--primary-blue);
+  transition: all 0.3s ease;
+}
+.table .btn-delete {
+  color: #dc3545;
+  transition: all 0.3s ease;
+}
+.table .btn-edit:hover {
+  color: var(--primary-blue);
+  transform: scale(1.1);
+  text-shadow: 0 0 8px rgba(13, 110, 253, 0.5);
+}
+.table .btn-delete:hover {
+  color: #dc3545;
+  transform: scale(1.1);
+  text-shadow: 0 0 8px rgba(220, 53, 69, 0.5);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Footer fijo abajo con más espacio */
+footer {
+  background: var(--bg-secondary);
+  padding: 40px 0; /* más alto */
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-color);
+  margin-top: auto; /* empuja el footer al fondo */
+}
+
+/* Espacio extra entre contenido y footer */
+main {
+  padding-bottom: 60px; /* separa el contenido del footer */
+}

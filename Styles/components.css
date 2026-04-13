@@ -1,0 +1,45 @@
+/* Estilos comunes para componentes repetitivos */
+
+/* Encabezados de cards con gradiente */
+.card-header-gradient {
+  background: linear-gradient(90deg, #0d6efd, #6610f2) !important;
+  font-size: 1.2rem !important;
+  color: white !important;
+  font-weight: bold !important;
+}
+
+/* Estilos para logos */
+.logo-large {
+  width: 140px !important;
+  height: auto !important;
+  border-radius: 50% !important;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3) !important;
+  border: 3px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.logo-medium {
+  width: 140px !important;
+  height: auto !important;
+  border-radius: 50% !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6) !important;
+}
+
+.logo-small {
+  width: 80px !important;
+  height: auto !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6) !important;
+}
+
+.logo-navbar {
+  width: 45px !important;
+  height: auto !important;
+  margin-right: 12px !important;
+  border-radius: 50% !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Estilos para títulos */
+.title-spacing {
+  letter-spacing: 0.5px !important;
+}
