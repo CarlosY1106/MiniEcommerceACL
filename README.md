@@ -30,9 +30,11 @@ MiniEcommerceACL/
 ## Requisitos
 
 - PHP 7.4 o superior
-- MySQL/MariaDB
-- Servidor web (Apache/Nginx)
+- MySQL/SQLYOG
+- Servidor web (Apache)
 - XAMPP (opcional, para desarrollo local)
+- Navegador web
+- Visual Studio Code
 
 ## Instalación
 
@@ -87,9 +89,6 @@ Por ejemplo:
 - **Carlitos Chávez** - Desarrollador
 - **Lurvin Ramos** - Desarrollador
 
-## Licencia
-
-Este proyecto está bajo la Licencia MIT.
 
 ## Contribuciones
 
