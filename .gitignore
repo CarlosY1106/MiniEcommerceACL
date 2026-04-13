@@ -1,26 +1,87 @@
-# Configuración local
-Config/Conexion.php
+# PHP
+*.php~
+*.phar
+composer.lock
+composer.phar
 
-# Archivos temporales y de sistema
-*.tmp
-*.temp
-.DS_Store
-Thumbs.db
+# Database
+*.sql
+*.db
+*.sqlite
 
-# Logs y errores
+# Logs and errors
 *.log
 error_log
+logs/
 
-# Archivos de IDE
+# Cache and temp files
+cache/
+tmp/
+temp/
+*.tmp
+*.cache
+
+# IDE and editor files
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
+.DS_Store
+Thumbs.db
 
-# Dependencias que no deberían estar en el repo
+# Environment and config files with sensitive data
+.env
+.env.local
+.env.production
+config.local.php
+
+# Node modules (if using npm/yarn)
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build and distribution folders
+dist/
+build/
+
+# Backup files
+*.bak
+*.backup
+
+# XAMPP specific
+htdocs/
+*.pid
+*.conf
+
+# Images and media (if large)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.svg
+*.ico
+*.mp4
+*.avi
+*.mov
+*.wmv
+
+# Vendor libraries (if using composer)
 vendor/
 
-# Archivos de cache
-cache/
-tmp/
+# User uploads
+uploads/
+user_files/
+content/uploads/
+
+# Session files
+sess_*
+session/
+
+# SSL certificates
+*.pem
+*.key
+*.crt
+*.csr
