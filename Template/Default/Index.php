@@ -17,7 +17,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark" id="mainNavbar">
     <div class="container">
       <a href="/Dashboard/Index" class="navbar-brand d-flex align-items-center">
-        <img src="/Images/LogoNuevo.jpg" alt="Logo" class="logo-navbar">
+        <img src="/Images/Logotipo.jpg" alt="Logo" class="logo-navbar">
         <span>Mini-Ecommerce-ACL</span>
       </a>
       

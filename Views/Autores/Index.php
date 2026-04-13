@@ -11,7 +11,7 @@
   <div class="position-relative">
     <!-- Logo del sistema -->
     <div class="mb-4">
-      <img src="/Images/LogoNuevo.jpg" alt="Logo" class="logo-small">
+      <img src="/Images/Logotipo.jpg" alt="Logo" class="logo-small">
     </div>
     
     <h1 class="text-white mb-3">

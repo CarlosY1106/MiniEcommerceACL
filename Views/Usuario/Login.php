@@ -19,7 +19,7 @@
       
       <!-- Logo centrado -->
       <div class="mb-4">
-        <img src="/Images/LogoNuevo.jpg" alt="Logo" class="logo-large">
+        <img src="/Images/Logotipo.jpg" alt="Logo" class="logo-large">
       </div>
       
       <h4 class="fw-bold mb-4 title-spacing">Iniciar Sesión</h4>

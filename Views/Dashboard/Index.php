@@ -3,7 +3,7 @@
 
 <div class="text-center mb-5">
   <!-- Logo redondo con sombra elegante -->
-  <img src="/Images/LogoNuevo.jpg" alt="Logo" class="logo-medium" 
+  <img src="/Images/Logotipo.jpg" alt="Logo" class="logo-medium" 
        class="mb-3">
   
   <h2 class="fw-bold text-gradient">Bienvenido (a) al Dashboard, 
