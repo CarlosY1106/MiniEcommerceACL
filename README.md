@@ -89,6 +89,10 @@ Por ejemplo:
 - **Carlitos Chávez** - Desarrollador
 - **Lurvin Ramos** - Desarrollador
 
+## Sitio publicado en InfinityFree:
+- https://miniecommerceacl.infinityfreeapp.com/
+
+
 
 ## Contribuciones
 
