@@ -46,3 +46,10 @@ localhost:9094/Inventario/Index
 
 localhost:9094/Inventario/Registro
 
+
+______________________________________________
+
+
+Sitio publicado en hosting:
+
+https://miniecommerceacl.infinityfreeapp.com/
